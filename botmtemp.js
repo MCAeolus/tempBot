@@ -7,7 +7,7 @@ function callback(obj){
 var announceMsg = ["Welcome to BreakingEDM!", "Make sure to follow the room's Rules & Guidelines!", "Check our our website for more room info! http://mcaeolusch.wix.com/breakingedm"]   
 var announce = 0;
 var announceMax = 2;
-function timerMethod() {
+function timerMethod222() {
 	
 	if(announce > announceMax){
 	
@@ -20,14 +20,9 @@ function timerMethod() {
 	announce++
 }
 
-var timerId = setInterval(timerMethod, 210000);
+var timerId222 = setInterval(timerMethod222, 210000);
 
-/**
- *Copyright 2014 Yemasthui
- *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
- *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
- */
-
+//Other
 
 (function () {
 
