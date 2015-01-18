@@ -15,7 +15,7 @@ function timerMethod() {
 	
 	}
 	
-		API.sendChat("/me [INFO] " + announceMsg.slice(announce));
+	API.sendChat("/me [INFO] " + announceMsg.slice(announce, announce));
 
 	announce++
 }
