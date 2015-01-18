@@ -20,7 +20,7 @@ API.on(API.USER_LEAVE, leaveMSG);
 
 function leaveMSG(user) {
 
-    API.sendChat("/me " + user.username + "left the room.");
+    API.sendChat("/me @" + user.username + " left the room.");
 
 }
 
