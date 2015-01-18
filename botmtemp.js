@@ -4,6 +4,24 @@ function callback(obj){
         $('#woot').click();
 }
 
+var announceMsg = ["Welcome to BreakingEDM!", "Make sure to follow the room's Rules & Guidelines!", "Check our our website for more room info! http://mcaeolusch.wix.com/breakingedm"]   
+var announce = 0;
+var announceMax = 2;
+function timerMethod() {
+	
+	if(announce > announceMax){
+	
+		announce = 0;
+	
+	}
+	
+		API.sendChat("/me [INFO] " + announceMsg.slice(announce));
+
+	announce++
+}
+
+var timerId = setInterval(timerMethod, 210000);
+
 /**
  *Copyright 2014 Yemasthui
  *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
