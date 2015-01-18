@@ -9,7 +9,7 @@ function timerMethod222() {
 	
 	}
 	
-	API.sendChat("/me [INFO] " + announceMsg.slice(announce, announce));
+	API.sendChat("/me [INFO] " + announceMsg.slice(announce, announce + 1));
 
 	announce++
 }
