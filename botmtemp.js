@@ -1,4 +1,4 @@
-var announceMsg = ["Welcome to BreakingEDM!", "Make sure to follow the room's Rules & Guidelines!", "Check our our website for more room info! http://mcaeolusch.wix.com/breakingedm"]   
+var announceMsg = ["Welcome to BreakingEDM!", "Make sure to follow the room's Rules & Guidelines!", "Check our our website for more room info! http://ow.ly/HwImf"]   
 var announce = 0;
 var announceMax = 2;
 function timerMethod222() {
