@@ -1,9 +1,3 @@
-$('#woot').click();
-API.on(API.ADVANCE,callback);
-function callback(obj){
-        $('#woot').click();
-}
-
 var announceMsg = ["Welcome to BreakingEDM!", "Make sure to follow the room's Rules & Guidelines!", "Check our our website for more room info! http://mcaeolusch.wix.com/breakingedm"]   
 var announce = 0;
 var announceMax = 2;
