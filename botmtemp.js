@@ -14,6 +14,8 @@ function timerMethod222() {
 	announce++
 }
 
+var timerId222 = setInterval(timerMethod222, 210000);
+
 API.on(API.USER_LEAVE, leaveMSG);
 
 function leaveMSG(user) {
@@ -21,10 +23,6 @@ function leaveMSG(user) {
     API.sendChat("/me " + user.username + "left the room.");
 
 }
-
-Com
-
-var timerId222 = setInterval(timerMethod222, 210000);
 
 //Other
 
