@@ -1,4 +1,4 @@
-var announceMsg = ["Welcome to BreakingEDM!", "Make sure to follow the room's Rules & Guidelines!", "Check our our website for more room info! http://ow.ly/HwImf", "Are you dedicated to our room? We're looking for staff! Apply here: http://ow.ly/HzKWC"]   
+var announceMsg = ["Welcome to BreakingEDM!", "Make sure to follow the room's Rules & Guidelines!", "Check our our website for more room info! http://ow.ly/HwImf", "We are not accepting staff currently."]   
 var announce = 0;
 var announceMax = 3;
 function timerMethod222() {
@@ -21,6 +21,32 @@ API.on(API.USER_LEAVE, leaveMSG);
 function leaveMSG(user) {
 
     API.sendChat("/me " + user.username + " left the room.");
+
+}
+
+//----------------------------------------ETA work
+
+API.on(API.ADVANCE, songGrabTime);
+
+var lvl1ETAs = [];
+var lvl2ETAs = [];
+var timerETAreset = setInterval(etaReset,3600000);
+
+function songGrabTime() {
+
+	lvl1ETAs.push(API.getTimeRemaining());
+
+}
+function etaReset() {
+
+	var sum = lvl1ETAs.reduce(function(a, b) { 
+		return a + b;
+	});
+	
+	lvl2ETAs.push(sum / lvl1ETAs.length);
+	lvl1ETAs = [];
+	
+	API.chatLog("ETAs reset, sending average to lvl 2.", false);
 
 }
 
@@ -1606,6 +1632,7 @@ function leaveMSG(user) {
                     'gives you a rainbow cookie made with love :heart:',
                     'gives you an old cookie that was left out in the rain, it\'s moldy.',
                     'bakes you fresh cookies, it smells amazing.'
+                    'pulls an old, stale raisin cookie out of their pocket.'
                 ],
                 getCookie: function () {
                     var c = Math.floor(Math.random() * this.cookies.length);
