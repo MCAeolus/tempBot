@@ -1632,7 +1632,7 @@ function etaReset() {
                     'gives you a rainbow cookie made with love :heart:',
                     'gives you an old cookie that was left out in the rain, it\'s moldy.',
                     'bakes you fresh cookies, it smells amazing.',
-                    'pulls an old, stale raisin cookie out of their pocket.',
+                    'pulls an old, stale raisin cookie out of their pocket and hands it to you.'
                 ],
                 getCookie: function () {
                     var c = Math.floor(Math.random() * this.cookies.length);
