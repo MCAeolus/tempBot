@@ -42,12 +42,15 @@ function etaReset() {
 
 }
 
+var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?"]
 API.on(API.CHAT, function(data){
 	
 	var message = data.message
 	if(message.contains("@BreakingBot")){
 	
-		API.sendChat("/me Why are you asking me things? :o");
+		var cmv = Math.floor(Math.random() * this.listMsgsSay.length);
+	
+		API.sendChat("/me "+ listMsgsSay.slice(cmv, cmv + 1));
 	
 	}
 
