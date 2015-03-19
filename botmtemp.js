@@ -51,7 +51,7 @@ API.on(API.CHAT, function(data){
 	
 	}
 
-}
+});
 
 //Other
 
@@ -274,7 +274,7 @@ API.on(API.CHAT, function(data){
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 5,
-            motd: "Temporary Message of the Day",
+            motd: "Welcome to BreakingEDM!",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
