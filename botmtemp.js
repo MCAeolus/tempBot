@@ -42,6 +42,17 @@ function etaReset() {
 
 }
 
+API.on(API.CHAT, function(data){
+	
+	var message = data.message
+	if(message.contains("@BreakingBot")){
+	
+		API.sendChat("/me Why are you asking me things? :o");
+	
+	}
+
+}
+
 //Other
 
 (function () {
