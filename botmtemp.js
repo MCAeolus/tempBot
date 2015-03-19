@@ -47,10 +47,12 @@ API.on(API.CHAT, function(data){
 	
 	var message = data.message
 	if(message.contains("@BreakingBot")){
+		
+		var minimum = 0
+		var maximum = 3
+		var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 	
-		var cmv = Math.floor(Math.random() * this.listMsgsSay.length);
-	
-		API.sendChat("/me "+ listMsgsSay.slice(cmv, cmv + 1));
+		API.sendChat("/me "+ listMsgsSay.slice(randomnumber, randomnumber + 1));
 	
 	}
 
