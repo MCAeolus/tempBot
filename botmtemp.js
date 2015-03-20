@@ -45,8 +45,8 @@ function etaReset() {
 var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?", "The Pony Army is taking over the world.", "Sure", "No.", "Yes ;D", "Ok.", "OOOOOOH, I bet you know @fea >;D", "I ate a cookie once. It was horrible.", "Do I have to? :c", "@||Aeolus|| is my owner... :c"]
 API.on(API.CHAT, function(data){
 	
-	var message = data.message
-	if(message.contains("@BreakingBot")){
+	var message = data.message.toLowerCase()
+	if(message.contains("@breakingbot")){
 		
 		var minimum = 0
 		var maximum = 12
