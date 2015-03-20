@@ -42,14 +42,14 @@ function etaReset() {
 
 }
 
-var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?"]
+var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?", "The Pony Army is taking over the world.", "Sure", "No.", "Yes ;D", "Ok.", "OOOOOOH, I bet you know @fea >;D", "I ate a cookie once. It was horrible.", "Do I have to? :c"]
 API.on(API.CHAT, function(data){
 	
 	var message = data.message
 	if(message.contains("@BreakingBot")){
 		
 		var minimum = 0
-		var maximum = 3
+		var maximum = 11
 		var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 	
 		API.sendChat("/me "+ listMsgsSay.slice(randomnumber, randomnumber + 1));
