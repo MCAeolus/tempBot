@@ -42,9 +42,11 @@ function etaReset() {
 
 }
 
+
 var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?", "The Pony Army is taking over the world.", "Sure", "No.", "Yes ;D", "Ok.", "OOOOOOH, I bet you know @fea >;D", "I ate a cookie once. It was horrible.", "Do I have to? :c", "@||Aeolus|| is my owner... :c", "All you had to do was follow the damn train!", "YELLOW CAR!!", "Botson, we have a problem.", "My name is Bot. BreakingBot.", "I love the smell of EDM in the morning!", "What we've got here is a failure to communicate.", "May the music be with you."]
 API.on(API.CHAT, function(data){
 	
+	var user = data.un
 	var message = data.message.toLowerCase()
 	if(message.contains("@breakingbot")){
 		
@@ -55,7 +57,10 @@ API.on(API.CHAT, function(data){
 		API.sendChat("/me "+ listMsgsSay.slice(randomnumber, randomnumber + 1));
 	
 	}
-
+	else if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
+		
+		API.sendChat("/me @" + user + " , you can create a playlist by clicking in the left-hand lower corner, then making a playlist. From there, just add your favorite music!"
+	}
 });
 
 //Other
