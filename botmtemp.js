@@ -63,7 +63,7 @@ API.on(API.CHAT, function(data){
 	}
 	else if(message.contains("what") && message.contains("rules") || message.contains("where") && message.contains("rules")){
 	
-		API.sendChat("/me @" + user + " , you can view our rules if you go to the the top left-hand corner of your screen, that has ouer title on it, and click on it!");
+		API.sendChat("/me @" + user + " , you can view our rules if you go to the the top left-hand corner of your screen, that has our title on it, and click on it!");
 	}
 });
 
