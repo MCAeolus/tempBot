@@ -61,6 +61,10 @@ API.on(API.CHAT, function(data){
 		
 		API.sendChat("/me @" + user + " , you can create a playlist by clicking in the left-hand lower corner, then making a playlist. From there, just add your favorite music!");
 	}
+	else if(message.contains("what") && message.contains("rules") || message.contains("where") && message.contains("rules")){
+	
+		API.sendChat("/me @" + user + " , you can view our rules if you go to the the top left-hand corner of your screen, where our title shows, and click on it!");
+	}
 });
 
 //Other
