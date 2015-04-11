@@ -239,7 +239,7 @@ API.on(API.CHAT, function(data){
 
     var basicBot = {
         version: "2.3.4",
-        status: true,
+        status: false,
         name: "BreakingBot",
         loggedInID: null,
         scriptLink: "https://raw.githubusercontent.com/MCAeolus/tempBot/master/botmtemp.js",
