@@ -42,129 +42,12 @@ function etaReset() {
 
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?", "The Pony Army is taking over the world.", "Sure", "No.", "Yes ;D", "Ok.", "OOOOOOH, I bet you know @fea >;D", "I ate a cookie once. It was horrible.", "Do I have to? :c", "@||Aeolus|| is my owner... :c", "All you had to do was follow the damn train!", "YELLOW CAR!!", "Botson, we have a problem.", "My name is Bot. BreakingBot.", "I love the smell of EDM in the morning!", "What we've got here is a failure to communicate.", "May the music be with you."]
->>>>>>> parent of ed84336... Something Insane
-=======
-=======
-
->>>>>>> parent of c7f7019... SSm2
-var CleverBot = new require('cleverbot-node')
-  , clever = new CleverBot()
-  , protection = require('./echo_protection')
-  , maybeSpiceUp = require('./fullmoon_spiceup');
-
-<<<<<<< HEAD
-/**
- * insult code
- * used to notify in channel if we are ignoring a person
- */
-=======
->>>>>>> parent of c7f7019... SSm2
-var insult = (function () {
-  var insults = [
-    '.',
-    '..',
-    'Get lost.',
-    '...',
-    'You should be working.',
-    'This is not a productive area of discussion.',
-    'Do you even lift?'
-  ];
-  var insIdx = -1;
-  return function () {
-    insIdx = (insIdx + 1) % insults.length;
-    return insults[insIdx];
-  };
-}());
-
-<<<<<<< HEAD
->>>>>>> parent of c79f3c1... SSm
-=======
->>>>>>> parent of c7f7019... SSm2
 API.on(API.CHAT, function(data){
 	
 	var user = data.un
 	var message = data.message.toLowerCase()
-<<<<<<< HEAD
 	
 	if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
-=======
-	if(message.contains("@breakingbot")){
-<<<<<<< HEAD
-		
-<<<<<<< HEAD
-		var minimum = 0
-		var maximum = 20
-		var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-	
-		API.sendChat("/me "+ listMsgsSay.slice(randomnumber, randomnumber + 1));
-	
-=======
-		var chop_message = message.replace('@breakingbot', '');
-		
-		module.exports = function (gu, opts) {
-
-			const ignoreMax = opts.ignoreMax || 3600;
-
-			gu.handle(/(.*)/, function (say, message, user) {
-				gu.log.info(user + ':', message);
-				if (protection.isTooSimilar(user, message)) {
-					protection.ignore(user, ignoreMax, gu.log);
-					API.sendChat(insult());
-				}
-				else {
-					// pass message on to cleverbot
-					clever.write(message, function (data) {
-						var resp = data.message;
-						// remember the last thing `user` got returned to him
-						// so we can verify that he doesn't simply echo it back
-						protection.remember(user, resp);
-
-						// do fancy things to the message on full moons
-						API.sendChat(maybeSpiceUp(resp));
-					}
-				}
-			}
-		});
->>>>>>> parent of c7f7019... SSm2
-	}
-=======
-		module.exports = function (gu, opts) {
-
-			const ignoreMax = opts.ignoreMax || 3600;
-
-			gu.handle(/(.*)/, function (say, message, user) {
-				gu.log.info(user + ':', message);
-				if (!protection.isIgnored(user)) {
-					if (protection.isTooSimilar(user, message)) {
-						protection.ignore(user, ignoreMax, gu.log);
-						API.sendChat(insult());
-					}
-					else {
-						// pass message on to cleverbot
-						clever.write(message, function (data) {
-						var resp = data.message;
-						// remember the last thing `user` got returned to him
-						// so we can verify that he doesn't simply echo it back
-						protection.remember(user, resp);
-						gu.log.info('clvr:', resp);
-
-						// do fancy things to the message on full moons
-						API.sendChat(maybeSpiceUp(resp));
-						});
-					}
-				}
-			});
-		};
-	}	
->>>>>>> parent of c79f3c1... SSm
-	else if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
->>>>>>> parent of ed84336... Something Insane
 		
 		API.sendChat("/me @" + user + " , you can create a playlist by clicking in the left-hand lower corner, then making a playlist. From there, just add your favorite music!");
 	}
@@ -172,16 +55,12 @@ API.on(API.CHAT, function(data){
 	
 		API.sendChat("/me @" + user + " , you can view our rules if you go to the the top left-hand corner of your screen, that has our title on it, and click on it!");
 	}
-<<<<<<< HEAD
 	else if(message.contains("@breakingbot")){
 		var chop_message = message.replace('@breakingbot', '');
 		
 		API.sendChat(chop_message);	
 	}	
 }
-=======
-});
->>>>>>> parent of ed84336... Something Insane
 
 //Other
 
@@ -3091,10 +2970,6 @@ API.on(API.CHAT, function(data){
         }
 	};
 
-<<<<<<< HEAD
     loadChat(basicBot.startup);
 
-};
-=======
-    loadChat(basicBot.startup);
->>>>>>> parent of fe07135... f
+};.call(this)
