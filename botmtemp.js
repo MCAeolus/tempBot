@@ -42,12 +42,30 @@ function etaReset() {
 
 }
 
+<<<<<<< HEAD
+=======
+
+var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?", "The Pony Army is taking over the world.", "Sure", "No.", "Yes ;D", "Ok.", "OOOOOOH, I bet you know @fea >;D", "I ate a cookie once. It was horrible.", "Do I have to? :c", "@||Aeolus|| is my owner... :c", "All you had to do was follow the damn train!", "YELLOW CAR!!", "Botson, we have a problem.", "My name is Bot. BreakingBot.", "I love the smell of EDM in the morning!", "What we've got here is a failure to communicate.", "May the music be with you."]
+>>>>>>> parent of ed84336... Something Insane
 API.on(API.CHAT, function(data){
 	
 	var user = data.un
 	var message = data.message.toLowerCase()
+<<<<<<< HEAD
 	
 	if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
+=======
+	if(message.contains("@breakingbot")){
+		
+		var minimum = 0
+		var maximum = 20
+		var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+	
+		API.sendChat("/me "+ listMsgsSay.slice(randomnumber, randomnumber + 1));
+	
+	}
+	else if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
+>>>>>>> parent of ed84336... Something Insane
 		
 		API.sendChat("/me @" + user + " , you can create a playlist by clicking in the left-hand lower corner, then making a playlist. From there, just add your favorite music!");
 	}
@@ -55,12 +73,16 @@ API.on(API.CHAT, function(data){
 	
 		API.sendChat("/me @" + user + " , you can view our rules if you go to the the top left-hand corner of your screen, that has our title on it, and click on it!");
 	}
+<<<<<<< HEAD
 	else if(message.contains("@breakingbot")){
 		var chop_message = message.replace('@breakingbot', '');
 		
 		API.sendChat(chop_message);	
 	}	
 }
+=======
+});
+>>>>>>> parent of ed84336... Something Insane
 
 //Other
 
