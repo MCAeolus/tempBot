@@ -48,10 +48,6 @@ var CleverBot = new require('cleverbot-node')
   , protection = require('./echo_protection')
   , maybeSpiceUp = require('./fullmoon_spiceup');
 
-/**
- * insult code
- * used to notify in channel if we are ignoring a person
- */
 var insult = (function () {
   var insults = [
     '.',
@@ -82,28 +78,25 @@ API.on(API.CHAT, function(data){
 
 			gu.handle(/(.*)/, function (say, message, user) {
 				gu.log.info(user + ':', message);
-				if (!protection.isIgnored(user)) {
-					if (protection.isTooSimilar(user, message)) {
-						protection.ignore(user, ignoreMax, gu.log);
-						API.sendChat(insult());
-					}
-					else {
-						// pass message on to cleverbot
-						clever.write(message, function (data) {
+				if (protection.isTooSimilar(user, message)) {
+					protection.ignore(user, ignoreMax, gu.log);
+					API.sendChat(insult());
+				}
+				else {
+					// pass message on to cleverbot
+					clever.write(message, function (data) {
 						var resp = data.message;
 						// remember the last thing `user` got returned to him
 						// so we can verify that he doesn't simply echo it back
 						protection.remember(user, resp);
-						gu.log.info('clvr:', resp);
 
 						// do fancy things to the message on full moons
 						API.sendChat(maybeSpiceUp(resp));
-						});
 					}
 				}
-			});
-		};
-	}	
+			}
+		});
+	}
 	else if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
 		
 		API.sendChat("/me @" + user + " , you can create a playlist by clicking in the left-hand lower corner, then making a playlist. From there, just add your favorite music!");
