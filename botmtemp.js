@@ -59,8 +59,7 @@ API.on(API.CHAT, function(data){
 		var chop_message = message.replace('@breakingbot', '');
 		
 		API.sendChat(chop_message);	
-	}
-	
+	}	
 }
 
 //Other
@@ -2969,7 +2968,6 @@ API.on(API.CHAT, function(data){
                 }
             }
         }
-    };
+	};
 
     loadChat(basicBot.startup);
-}).call(this);
