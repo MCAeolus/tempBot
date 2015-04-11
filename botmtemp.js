@@ -3052,6 +3052,10 @@ API.on(API.CHAT, function(data){
         }
 	};
 
+<<<<<<< HEAD
     loadChat(basicBot.startup);
 
 };
+=======
+    loadChat(basicBot.startup);
+>>>>>>> parent of fe07135... f
