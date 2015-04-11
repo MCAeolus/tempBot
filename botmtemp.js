@@ -38,7 +38,7 @@ function etaReset() {
 	lvl2ETAs.push(sum / lvl1ETAs.length);
 	lvl1ETAs = [];
 	
-	API.chatLog("ETAs reset, sending average to lvl 2. (" + lvl2ETAs.slice(announce, announce + 1) + ")"f, false);
+	API.chatLog("ETAs reset, sending average to lvl 2. (" + lvl2ETAs.slice(0, 1) + ")", false);
 
 }
 
