@@ -2969,7 +2969,6 @@ API.on(API.CHAT, function(data){
             }
         }
 	};
-
-    loadChat(basicBot.startup);
-
-});
+	
+	loadChat(basicBot.startup);
+}).call(this);
