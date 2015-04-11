@@ -46,13 +46,8 @@ API.on(API.CHAT, function(data){
 	
 	var user = data.un
 	var message = data.message.toLowerCase()
-	if(message.contains("@breakingbot")){
-		var chop_message = message.replace('@breakingbot', '');
-		
-		API.sendChat(chop_message);
-		
-	}
-	else if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
+	
+	if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
 		
 		API.sendChat("/me @" + user + " , you can create a playlist by clicking in the left-hand lower corner, then making a playlist. From there, just add your favorite music!");
 	}
@@ -60,6 +55,12 @@ API.on(API.CHAT, function(data){
 	
 		API.sendChat("/me @" + user + " , you can view our rules if you go to the the top left-hand corner of your screen, that has our title on it, and click on it!");
 	}
+	else if(message.contains("@breakingbot")){
+		var chop_message = message.replace('@breakingbot', '');
+		
+		API.sendChat(chop_message);	
+	}
+	
 }
 
 //Other
