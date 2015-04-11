@@ -2972,4 +2972,4 @@ API.on(API.CHAT, function(data){
 
     loadChat(basicBot.startup);
 
-};
+});
