@@ -45,8 +45,37 @@ function etaReset() {
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 var listMsgsSay = ["I only break sometimes ;-;", "I am a robot.", "I have nothing for you :c", "Why are you asking me things!?!?", "The Pony Army is taking over the world.", "Sure", "No.", "Yes ;D", "Ok.", "OOOOOOH, I bet you know @fea >;D", "I ate a cookie once. It was horrible.", "Do I have to? :c", "@||Aeolus|| is my owner... :c", "All you had to do was follow the damn train!", "YELLOW CAR!!", "Botson, we have a problem.", "My name is Bot. BreakingBot.", "I love the smell of EDM in the morning!", "What we've got here is a failure to communicate.", "May the music be with you."]
 >>>>>>> parent of ed84336... Something Insane
+=======
+var CleverBot = new require('cleverbot-node')
+  , clever = new CleverBot()
+  , protection = require('./echo_protection')
+  , maybeSpiceUp = require('./fullmoon_spiceup');
+
+/**
+ * insult code
+ * used to notify in channel if we are ignoring a person
+ */
+var insult = (function () {
+  var insults = [
+    '.',
+    '..',
+    'Get lost.',
+    '...',
+    'You should be working.',
+    'This is not a productive area of discussion.',
+    'Do you even lift?'
+  ];
+  var insIdx = -1;
+  return function () {
+    insIdx = (insIdx + 1) % insults.length;
+    return insults[insIdx];
+  };
+}());
+
+>>>>>>> parent of c79f3c1... SSm
 API.on(API.CHAT, function(data){
 	
 	var user = data.un
@@ -57,6 +86,7 @@ API.on(API.CHAT, function(data){
 =======
 	if(message.contains("@breakingbot")){
 		
+<<<<<<< HEAD
 		var minimum = 0
 		var maximum = 20
 		var randomnumber = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
@@ -64,6 +94,36 @@ API.on(API.CHAT, function(data){
 		API.sendChat("/me "+ listMsgsSay.slice(randomnumber, randomnumber + 1));
 	
 	}
+=======
+		module.exports = function (gu, opts) {
+
+			const ignoreMax = opts.ignoreMax || 3600;
+
+			gu.handle(/(.*)/, function (say, message, user) {
+				gu.log.info(user + ':', message);
+				if (!protection.isIgnored(user)) {
+					if (protection.isTooSimilar(user, message)) {
+						protection.ignore(user, ignoreMax, gu.log);
+						API.sendChat(insult());
+					}
+					else {
+						// pass message on to cleverbot
+						clever.write(message, function (data) {
+						var resp = data.message;
+						// remember the last thing `user` got returned to him
+						// so we can verify that he doesn't simply echo it back
+						protection.remember(user, resp);
+						gu.log.info('clvr:', resp);
+
+						// do fancy things to the message on full moons
+						API.sendChat(maybeSpiceUp(resp));
+						});
+					}
+				}
+			});
+		};
+	}	
+>>>>>>> parent of c79f3c1... SSm
 	else if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
 >>>>>>> parent of ed84336... Something Insane
 		
