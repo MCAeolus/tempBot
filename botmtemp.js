@@ -242,7 +242,7 @@ API.on(API.CHAT, function(data){
         status: false,
         name: "BreakingBot",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/MCAeolus/tempBot/master/botmtemp.js",
+        scriptLink: "https://raw.githubusercontent.com/MCAeolus/tempBot/master/botmtemp.js",
         cmdLink: "http://git.io/245Ppg",
         chatLink: "https://raw.githubusercontent.com/MCAeolus/tempBot/master/lang/langIndex.json",
         chat: null,
@@ -250,7 +250,7 @@ API.on(API.CHAT, function(data){
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "BreakingBot",
             language: "english",
 			chatLink: "https://raw.githubusercontent.com/MCAeolus/tempBot/master/lang/langIndex.json",
 			startupCap: 1, // 1-200
