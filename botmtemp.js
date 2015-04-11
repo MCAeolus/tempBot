@@ -240,7 +240,7 @@ API.on(API.CHAT, function(data){
     var basicBot = {
         version: "2.3.4",
         status: false,
-        name: "BreakingBot",
+        name: "basicBot",
         loggedInID: null,
         scriptLink: "https://raw.githubusercontent.com/MCAeolus/tempBot/master/botmtemp.js",
         cmdLink: "http://git.io/245Ppg",
