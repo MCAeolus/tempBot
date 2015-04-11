@@ -42,29 +42,6 @@ function etaReset() {
 
 }
 
-
-var CleverBot = new require('cleverbot-node')
-  , clever = new CleverBot()
-  , protection = require('./echo_protection')
-  , maybeSpiceUp = require('./fullmoon_spiceup');
-
-var insult = (function () {
-  var insults = [
-    '.',
-    '..',
-    'Get lost.',
-    '...',
-    'You should be working.',
-    'This is not a productive area of discussion.',
-    'Do you even lift?'
-  ];
-  var insIdx = -1;
-  return function () {
-    insIdx = (insIdx + 1) % insults.length;
-    return insults[insIdx];
-  };
-}());
-
 API.on(API.CHAT, function(data){
 	
 	var user = data.un
@@ -72,30 +49,8 @@ API.on(API.CHAT, function(data){
 	if(message.contains("@breakingbot")){
 		var chop_message = message.replace('@breakingbot', '');
 		
-		module.exports = function (gu, opts) {
-
-			const ignoreMax = opts.ignoreMax || 3600;
-
-			gu.handle(/(.*)/, function (say, message, user) {
-				gu.log.info(user + ':', message);
-				if (protection.isTooSimilar(user, message)) {
-					protection.ignore(user, ignoreMax, gu.log);
-					API.sendChat(insult());
-				}
-				else {
-					// pass message on to cleverbot
-					clever.write(message, function (data) {
-						var resp = data.message;
-						// remember the last thing `user` got returned to him
-						// so we can verify that he doesn't simply echo it back
-						protection.remember(user, resp);
-
-						// do fancy things to the message on full moons
-						API.sendChat(maybeSpiceUp(resp));
-					}
-				}
-			}
-		});
+		API.sendChat(chop_message);
+		
 	}
 	else if(message.contains("how") && message.contains("make") && message.contains("playlist") || message.contains("how") && message.contains("create") && message.contains("playlist")){
 		
