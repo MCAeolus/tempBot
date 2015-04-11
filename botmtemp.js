@@ -60,7 +60,7 @@ API.on(API.CHAT, function(data){
 		
 		API.sendChat(chop_message);	
 	}	
-}
+});
 
 //Other
 
