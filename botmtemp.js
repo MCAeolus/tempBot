@@ -58,7 +58,7 @@ API.on(API.CHAT, function(data){
 	else if(message.contains("@breakingbot")){
 		var chop_message = message.replace('@breakingbot', '');
 		
-		API.sendChat(chop_message);	
+		API.sendChat("/me " + chop_message);	
 	}	
 });
 
