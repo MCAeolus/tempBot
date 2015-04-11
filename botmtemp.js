@@ -244,7 +244,7 @@ API.on(API.CHAT, function(data){
         loggedInID: null,
         scriptLink: "https://rawgit.com/MCAeolus/tempBot/master/botmtemp.js",
         cmdLink: "http://git.io/245Ppg",
-        chatLink: "https://rawgit.com/MCAeolus/tempBot/master/lang/en.json",
+        chatLink: "https://cdn.rawgit.com/MCAeolus/tempBot/master/lang/langIndex.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -252,7 +252,7 @@ API.on(API.CHAT, function(data){
         settings: {
             botName: "basicBot",
             language: "english",
-			chatLink: "https://rawgit.com/MCAeolus/tempBot/master/lang/en.json",
+			chatLink: "https://cdn.rawgit.com/MCAeolus/tempBot/master/lang/langIndex.json",
 			startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
