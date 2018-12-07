@@ -113,7 +113,7 @@ API.on(API.CHAT, function(data){
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://rawgit.com/MCAeolus/tempBot/master/lang/langIndex.json", function (json) {
+        $.get("https://cdn.jsdelivr.net/gh/MCAeolus/tempBot/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
